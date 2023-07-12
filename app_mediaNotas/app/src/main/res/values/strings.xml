@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">app_mediaNotas</string>
+    <string name="media_notas">Média das Notas!</string>
+    <string name="matematica">Matemática</string>
+    <string name="txt_fisica">Física</string>
+    <string name="txt_nota3">Nota3</string>
+    <string name="txt_nota4">Nota4</string>
+    <string name="txt_nota1">Nota1</string>
+    <string name="txt_nota2">Nota2</string>
+    <string name="txt_nota3_mat">Nota3</string>
+    <string name="txt_nota4_geo">Nota4</string>
+    <string name="txt_nota1_mat">Nota1</string>
+    <string name="txt_historia">História</string>
+    <string name="txt_portugues">Português</string>
+    <string name="txt_nota1_his">Nota1</string>
+    <string name="txt_nota4_his">Nota4</string>
+    <string name="txt_nota1_por">Nota1</string>
+    <string name="txt_nota3_geo">Nota3</string>
+    <string name="txt_nota3_his">Nota3</string>
+    <string name="txt_nota1_geo">Nota1</string>
+    <string name="txt_nota2_mat">Nota2</string>
+    <string name="txt_calcular">Calcular</string>
+    <string name="txt_salvar">Salvar</string>
+    <string name="txt_limpar">Limpar</string>
+    <string name="txt_nota2_geo">Nota2</string>
+    <string name="txt_nota2_his">Nota2</string>
+    <string name="txt_nota4_port">Nota4</string>
+    <string name="txt_geografia">Geografia</string>
+    <string name="txt_nota3_port">Nota3</string>
+    <string name="txt_nota2_port">Nota2</string>
+    <string name="txt_nota4_mat">Nota4</string>
+    <string name="txt_nome_aluno">Nome Aluno</string>
+</resources>
