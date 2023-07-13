@@ -44,12 +44,19 @@ public class AlunoController extends databaseNotas {
     public  String calcular(Aluno aluno){
        double media = aluno.media(aluno.getNota1(), aluno.getNota2(), aluno.getNota3(), aluno.getNota4());
        String disciplina = aluno.getDisciplina();
+       String resultado;
        String frase;
 
        if(media>=60){
-           frase = String.format("Aprovado" + disciplina+ "com Média: %.2f",media);
+           resultado = "Aprovado";
+           aluno.setMedia(media);
+           aluno.setResultado(resultado);
+           frase = String.format("Aprovado " + disciplina+ " com Média: %.2f",media);
        }else{
-           frase = String.format("Reprovado" + disciplina+ " com Média: %.2f",media);
+           resultado = "Reprovado";
+           aluno.setMedia(media);
+           aluno.setResultado(resultado);
+           frase = String.format("Reprovado " + disciplina+ " com Média: %.2f",media);
        }
        return frase;
     }
