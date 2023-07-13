@@ -17,7 +17,11 @@ import dev.android.monique.franca.app.lista.app_medianotas.model.Aluno;
 public class MainActivity extends AppCompatActivity {
 
     AlunoController alunoController;
-    Aluno aluno;
+    Aluno alunomat;
+    Aluno alunopor;
+    Aluno alunogeo;
+    Aluno alunohis;
+    Aluno alunofis;
 
     EditText nomeAluno;
 
@@ -67,7 +71,11 @@ public class MainActivity extends AppCompatActivity {
         alunoController = new AlunoController(MainActivity.this);
         alunoController.toString();
 
-       aluno = new Aluno();
+       alunomat = new Aluno();
+       alunopor = new Aluno();
+       alunogeo = new Aluno();
+       alunohis = new Aluno();
+       alunofis = new Aluno();
 
        nomeAluno = findViewById(R.id.nome_aluno);
 
@@ -266,13 +274,14 @@ public class MainActivity extends AppCompatActivity {
                    double nota4mat = Double.parseDouble(String.valueOf(nota4_mat.getText()));
                    String fraseMat;
 
-                   aluno.setDisciplina(disMatematica);
-                   aluno.setNota1(nota1mat);
-                   aluno.setNota2(nota2mat);
-                   aluno.setNota3(nota3mat);
-                   aluno.setNota4(nota4mat);
+                   alunomat.setNomeAluno(nome);
+                   alunomat.setDisciplina(disMatematica);
+                   alunomat.setNota1(nota1mat);
+                   alunomat.setNota2(nota2mat);
+                   alunomat.setNota3(nota3mat);
+                   alunomat.setNota4(nota4mat);
 
-                  fraseMat = alunoController.calcular(aluno);
+                  fraseMat = alunoController.calcular(alunomat);
 
                   //Portugues
                    double nota1port= Double.parseDouble(String.valueOf(nota1_por.getText()));
@@ -281,13 +290,14 @@ public class MainActivity extends AppCompatActivity {
                    double nota4port= Double.parseDouble(String.valueOf(nota4_por.getText()));
                    String frasePort;
 
-                   aluno.setDisciplina(disPortugues);
-                   aluno.setNota1(nota1port);
-                   aluno.setNota2(nota2port);
-                   aluno.setNota3(nota3port);
-                   aluno.setNota4(nota4port);
+                   alunopor.setNomeAluno(nome);
+                   alunopor.setDisciplina(disPortugues);
+                   alunopor.setNota1(nota1port);
+                   alunopor.setNota2(nota2port);
+                   alunopor.setNota3(nota3port);
+                   alunopor.setNota4(nota4port);
 
-                   frasePort = alunoController.calcular(aluno);
+                   frasePort = alunoController.calcular(alunopor);
 
                    //Geografia
                    double nota1Geo = Double.parseDouble(String.valueOf(nota1_geo.getText()));
@@ -296,13 +306,14 @@ public class MainActivity extends AppCompatActivity {
                    double nota4Geo = Double.parseDouble(String.valueOf(nota4_geo.getText()));
                    String fraseGeo;
 
-                   aluno.setDisciplina(disGeografia);
-                   aluno.setNota1(nota1Geo);
-                   aluno.setNota2(nota2Geo);
-                   aluno.setNota3(nota3Geo);
-                   aluno.setNota4(nota4Geo);
+                   alunogeo.setNomeAluno(nome);
+                   alunogeo.setDisciplina(disGeografia);
+                   alunogeo.setNota1(nota1Geo);
+                   alunogeo.setNota2(nota2Geo);
+                   alunogeo.setNota3(nota3Geo);
+                   alunogeo.setNota4(nota4Geo);
 
-                   fraseGeo = alunoController.calcular(aluno);
+                   fraseGeo = alunoController.calcular(alunogeo);
 
                    //História
                    double nota1his = Double.parseDouble(String.valueOf(nota1_his.getText()));
@@ -311,13 +322,14 @@ public class MainActivity extends AppCompatActivity {
                    double nota4his = Double.parseDouble(String.valueOf(nota4_his.getText()));
                    String fraseHis;
 
-                   aluno.setDisciplina(disHistoria);
-                   aluno.setNota1(nota1his);
-                   aluno.setNota2(nota2his);
-                   aluno.setNota3(nota3his);
-                   aluno.setNota4(nota4his);
+                   alunohis.setNomeAluno(nome);
+                   alunohis.setDisciplina(disHistoria);
+                   alunohis.setNota1(nota1his);
+                   alunohis.setNota2(nota2his);
+                   alunohis.setNota3(nota3his);
+                   alunohis.setNota4(nota4his);
 
-                   fraseHis = alunoController.calcular(aluno);
+                   fraseHis = alunoController.calcular(alunohis);
 
                    //Fisica
                    double nota1fis = Double.parseDouble(String.valueOf(nota1_fis.getText()));
@@ -326,13 +338,14 @@ public class MainActivity extends AppCompatActivity {
                    double nota4fis = Double.parseDouble(String.valueOf(nota4_fis.getText()));
                    String fraseFis;
 
-                   aluno.setDisciplina(disFisica);
-                   aluno.setNota1(nota1fis);
-                   aluno.setNota2(nota2fis);
-                   aluno.setNota3(nota3fis);
-                   aluno.setNota4(nota4fis);
+                   alunofis.setNomeAluno(nome);
+                   alunofis.setDisciplina(disFisica);
+                   alunofis.setNota1(nota1fis);
+                   alunofis.setNota2(nota2fis);
+                   alunofis.setNota3(nota3fis);
+                   alunofis.setNota4(nota4fis);
 
-                   fraseFis = alunoController.calcular(aluno);
+                   fraseFis = alunoController.calcular(alunofis);
 
                    // Frase Final
                   editResultado.setText( " "+ nome + "\n" +
@@ -353,15 +366,13 @@ public class MainActivity extends AppCompatActivity {
        btnbuttonSalvar.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               aluno.setNomeAluno(String.valueOf(nomeAluno.getText()));
-               aluno.setDisciplina(disMatematica);
-               aluno.setNota1(Double.parseDouble(String.valueOf(nota1_mat.getText())));
-               aluno.setNota2(Double.parseDouble(String.valueOf(nota2_mat.getText())));
-               aluno.setNota3(Double.parseDouble(String.valueOf(nota3_mat.getText())));
-               aluno.setNota4(Double.parseDouble(String.valueOf(nota4_mat.getText())));
-               aluno.setResultado("aprovado");
 
-               alunoController.salvar(aluno);
+
+               alunoController.salvar(alunomat);
+               alunoController.salvar(alunopor);
+               alunoController.salvar(alunogeo);
+               alunoController.salvar(alunohis);
+               alunoController.salvar(alunofis);
 
 
            }
